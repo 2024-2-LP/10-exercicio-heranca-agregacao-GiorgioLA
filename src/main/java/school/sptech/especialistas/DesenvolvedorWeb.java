@@ -53,4 +53,18 @@ public class DesenvolvedorWeb extends Desenvolvedor {
         }
 
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DesenvolvedorWeb{");
+        sb.append("backend='").append(backend).append('\'');
+        sb.append(", frontend='").append(frontend).append('\'');
+        sb.append(", sgbd='").append(sgbd).append('\'');
+        sb.append(", horasMentoria=").append(horasMentoria);
+        sb.append(", nome='").append(nome).append('\'');
+        sb.append(", qtdHoras=").append(qtdHoras);
+        sb.append(", valorHora=").append(valorHora);
+        sb.append('}');
+        return sb.toString();
+    }
 }

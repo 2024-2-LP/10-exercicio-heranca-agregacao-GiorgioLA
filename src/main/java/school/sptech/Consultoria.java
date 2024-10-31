@@ -83,33 +83,49 @@ public class Consultoria {
     }
 
     public List<Desenvolvedor> buscarPorTecnologia(String tecnologia) {
-//        List<Desenvolvedor> devEsp = desenvolvedores.stream()
-//                .filter(d -> d instanceof DesenvolvedorMobile || d instanceof DesenvolvedorWeb)
-//                .toList();
-//
-//        List<Desenvolvedor> retorno = new ArrayList<>();
 
         List<Desenvolvedor> retorno = new ArrayList<>();
-        for (int i = 0; i < desenvolvedores.size(); i++) {
-            Desenvolvedor devDaVez = desenvolvedores.get(i);
-
-            if (devDaVez instanceof DesenvolvedorMobile) {
-                if (((DesenvolvedorMobile) devDaVez).getLinguagem().contains(tecnologia)) {
-                    retorno.add(devDaVez);
-                } else if (((DesenvolvedorMobile) devDaVez).getPlataforma().contains(tecnologia)) {
-                    retorno.add(devDaVez);
-                }
-            } else if (devDaVez instanceof DesenvolvedorWeb) {
-                if (((DesenvolvedorWeb) devDaVez).getBackend().contains(tecnologia)) {
-                    retorno.add(devDaVez);
-                } else if (((DesenvolvedorWeb) devDaVez).getFrontend().contains(tecnologia)) {
-                    retorno.add(devDaVez);
-                } else if (((DesenvolvedorWeb) devDaVez).getSgbd().contains(tecnologia)) {
-                    retorno.add(devDaVez);
-                }
+        for (Desenvolvedor dev: desenvolvedores) {
+            if (dev.toString().contains(tecnologia)) {
+                retorno.add(dev);
             }
         }
         return retorno;
+
+//        return desenvolvedores.stream()
+//                .filter(d -> d instanceof DesenvolvedorMobile && (
+//                        ((DesenvolvedorMobile) d).getLinguagem().contains(tecnologia) ||
+//                                ((DesenvolvedorMobile) d).getPlataforma().contains(tecnologia)
+//                        ) || d instanceof DesenvolvedorWeb && (
+//                                ((DesenvolvedorWeb) d).getBackend().contains(tecnologia) ||
+//                                        ((DesenvolvedorWeb) d).getFrontend().contains(tecnologia) ||
+//                                        ((DesenvolvedorWeb) d).getSgbd().contains(tecnologia)
+//                        )
+//                ).toList();
+//
+//        ------/----------/-----------/-----------/
+//
+//        List<Desenvolvedor> retorno = new ArrayList<>();
+//        for (int i = 0; i < desenvolvedores.size(); i++) {
+//            Desenvolvedor devDaVez = desenvolvedores.get(i);
+//
+//            if (devDaVez instanceof DesenvolvedorMobile) {
+//                if (((DesenvolvedorMobile) devDaVez).getLinguagem().contains(tecnologia)) {
+//                    retorno.add(devDaVez);
+//                } else if (((DesenvolvedorMobile) devDaVez).getPlataforma().contains(tecnologia)) {
+//                    retorno.add(devDaVez);
+//                }
+//            } else if (devDaVez instanceof DesenvolvedorWeb) {
+//                if (((DesenvolvedorWeb) devDaVez).getBackend().contains(tecnologia)) {
+//                    retorno.add(devDaVez);
+//                } else if (((DesenvolvedorWeb) devDaVez).getFrontend().contains(tecnologia)) {
+//                    retorno.add(devDaVez);
+//                } else if (((DesenvolvedorWeb) devDaVez).getSgbd().contains(tecnologia)) {
+//                    retorno.add(devDaVez);
+//                }
+//            }
+//        }
+//        return retorno;
     }
 
     public Double getTotalSalariosPorTecnologia(String tecnologia) {

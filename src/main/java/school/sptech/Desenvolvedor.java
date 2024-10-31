@@ -32,4 +32,14 @@ public class Desenvolvedor {
     public Double calcularSalario() {
         return qtdHoras * valorHora;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Desenvolvedor{");
+        sb.append("nome='").append(nome).append('\'');
+        sb.append(", qtdHoras=").append(qtdHoras);
+        sb.append(", valorHora=").append(valorHora);
+        sb.append('}');
+        return sb.toString();
+    }
 }

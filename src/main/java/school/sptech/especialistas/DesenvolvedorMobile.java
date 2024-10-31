@@ -35,4 +35,17 @@ public class DesenvolvedorMobile extends Desenvolvedor {
     public Double calcularSalario() {
         return super.calcularSalario() + 200.0 * horasPrototipacao;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DesenvolvedorMobile{");
+        sb.append("plataforma='").append(plataforma).append('\'');
+        sb.append(", linguagem='").append(linguagem).append('\'');
+        sb.append(", horasPrototipacao=").append(horasPrototipacao);
+        sb.append(", nome='").append(nome).append('\'');
+        sb.append(", qtdHoras=").append(qtdHoras);
+        sb.append(", valorHora=").append(valorHora);
+        sb.append('}');
+        return sb.toString();
+    }
 }
